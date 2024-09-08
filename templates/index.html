@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Transcription and Q&A</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Video Transcription and Q&A</h1>
+        
+        <form id="youtube-form">
+            <input type="text" id="youtube-url" placeholder="Enter YouTube URL" required>
+            <button type="submit">Transcribe</button>
+        </form>
+
+        <div id="transcription"></div>
+
+        <form id="question-form" style="display: none;">
+            <input type="text" id="question" placeholder="Ask a question about the video" required>
+            <button type="submit">Ask</button>
+        </form>
+
+        <div id="answer"></div>
+
+        <div id="error" class="error"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

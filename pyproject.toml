@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "repl-nix-youtubetranscribequery"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^3.0.3"
+openai = "^1.44.0"
+pytube = "^15.0.0"
+yt-dlp = "^2024.8.6"
+pydub = "^0.25.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

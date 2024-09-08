@@ -34,13 +34,46 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-#transcription, #answer {
+#transcription-container {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+#toggle-transcription {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#toggle-transcription:hover {
+    background-color: #e0e0e0;
+}
+
+#transcription {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#answer {
     margin-top: 20px;
     border: 1px solid #ddd;
     padding: 10px;

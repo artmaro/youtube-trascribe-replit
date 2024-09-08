@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('youtube-form');
     const questionForm = document.getElementById('question-form');
+    const transcriptionContainer = document.getElementById('transcription-container');
     const transcriptionDiv = document.getElementById('transcription');
+    const toggleTranscriptionBtn = document.getElementById('toggle-transcription');
     const answerDiv = document.getElementById('answer');
     const errorDiv = document.getElementById('error');
     const exportTranscriptionBtn = document.getElementById('export-transcription');
@@ -29,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentTranscription = data.transcription;
                 transcriptionDiv.textContent = currentTranscription;
                 errorDiv.textContent = '';
+                transcriptionContainer.style.display = 'block';
+                transcriptionDiv.style.display = 'block'; // Make sure transcription is visible by default
+                toggleTranscriptionBtn.textContent = 'Hide Transcription'; // Update button text
                 questionForm.style.display = 'block';
                 exportTranscriptionBtn.style.display = 'block';
                 qaData = []; // Reset Q&A data
@@ -38,10 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             errorDiv.textContent = `Error: ${error.message}`;
-            transcriptionDiv.textContent = '';
+            transcriptionContainer.style.display = 'none';
             questionForm.style.display = 'none';
             exportTranscriptionBtn.style.display = 'none';
             exportQABtn.style.display = 'none';
+        }
+    });
+
+    toggleTranscriptionBtn.addEventListener('click', () => {
+        if (transcriptionDiv.style.display === 'none') {
+            transcriptionDiv.style.display = 'block';
+            toggleTranscriptionBtn.textContent = 'Hide Transcription';
+        } else {
+            transcriptionDiv.style.display = 'none';
+            toggleTranscriptionBtn.textContent = 'Show Transcription';
         }
     });
 
